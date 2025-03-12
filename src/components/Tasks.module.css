@@ -1,0 +1,48 @@
+.tasks {
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 736px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoCreated, .infoDone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.infoCreated p {
+  color: var(--blue);
+  font-size: 0.875rem;
+}
+
+.infoDone p {
+  color: var(--purple);
+  font-size: 0.875rem;
+}
+
+.infoCreated span {
+  color: var(--gray-200);
+  background: var(--gray-400);
+  padding: 2px 8px;
+  border-radius: 16px;
+
+  font-size: 0.75rem;
+}
+
+.infoDone span {
+  color: var(--gray-200);
+  background: var(--gray-400);
+  padding: 2px 8px;
+  border-radius: 16px;
+
+  font-size: 0.75rem;
+}
