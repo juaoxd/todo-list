@@ -4,7 +4,8 @@
   justify-content: center;
   gap: 0.5rem;
 
-  margin: calc(0px - 1.5rem) auto;
+  margin: calc(0px - 27px) auto;
+  max-height: 54px;
   max-width: 736px;
 }
 
@@ -12,7 +13,7 @@
   background: var(--gray-500);
   color: var(--gray-300);
   padding: 1rem;
-  border: none;
+  border: 1px solid var(--gray-700);
   border-radius: 8px;
   line-height: 1.4;
 
