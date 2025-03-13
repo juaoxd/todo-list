@@ -23,7 +23,7 @@ export function Task(props: TaskProps) {
           {/* TODO
             - Add check icon when task is checked
           */}
-          <input type="checkbox" name="" id="" checked={isChecked} onClick={toggleCompletion} />
+          <input type="checkbox" name="" id="" defaultChecked={isChecked} onClick={toggleCompletion} />
           <p>{props.title}</p>
         </div>
         <button>

@@ -1,8 +1,12 @@
-// import { EmptyList } from './EmptyList'
-import { TaskList } from './TaskList'
+import { EmptyList } from './EmptyList'
+import { TaskList, TaskType } from './TaskList'
 import styles from './Tasks.module.css'
 
-export function Tasks() {
+interface TasksProps {
+  tasks: TaskType[]
+}
+
+export function Tasks({ tasks }: TasksProps) {
   return (
     <div className={styles.tasks}>
       <header className={styles.info}>
@@ -15,8 +19,7 @@ export function Tasks() {
           <span>0</span>
         </div>
       </header>
-      {/* <EmptyList /> */}
-      <TaskList />
+      {tasks.length === 0 ? <EmptyList /> : <TaskList tasks={tasks} />}
     </div>
   )
 }

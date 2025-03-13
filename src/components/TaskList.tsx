@@ -1,20 +1,17 @@
 import styles from './TaskList.module.css'
 import { Task } from './Task'
 
-const tasks = [
-  {
-    id: 1,
-    title: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: false
-  },
-  {
-    id: 2,
-    title: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
-    isCompleted: true
-  },
-]
+export interface TaskType {
+  id: string
+  title: string
+  isCompleted: boolean
+}
 
-export function TaskList() {
+interface TaskListProps {
+  tasks: TaskType[]
+}
+
+export function TaskList({ tasks }: TaskListProps) {
   return (
     <div className={styles.taskList}>
       {
