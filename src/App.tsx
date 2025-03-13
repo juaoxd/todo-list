@@ -14,11 +14,17 @@ export function App() {
     })
   }
 
+  function deleteTask(taskToDeleteId: string) {
+    const tasksWithoutDeleted = tasks.filter(task => task.id !== taskToDeleteId)
+
+    setTasks(tasksWithoutDeleted)
+  }
+
   return (
    <div>
     <Header />
     <CreateTask onCreateTask={createTask} />
-    <Tasks tasks={tasks} />
+    <Tasks tasks={tasks} onDeleteTask={deleteTask} />
    </div>
   )
 }

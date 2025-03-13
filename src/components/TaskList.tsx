@@ -9,14 +9,15 @@ export interface TaskType {
 
 interface TaskListProps {
   tasks: TaskType[]
+  onDeleteTask(id: string): void
 }
 
-export function TaskList({ tasks }: TaskListProps) {
+export function TaskList({ tasks, onDeleteTask }: TaskListProps) {
   return (
     <div className={styles.taskList}>
       {
         tasks.map(task => {
-          return <Task key={task.id} title={task.title} isCompleted={task.isCompleted} />
+          return <Task key={task.id} id={task.id} title={task.title} isCompleted={task.isCompleted} onDeleteTask={onDeleteTask} />
         })
       }
     </div>

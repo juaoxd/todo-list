@@ -4,17 +4,23 @@ import styles from './Task.module.css'
 import { useState } from "react";
 
 interface TaskProps {
+  id: string
   title: string
   isCompleted: boolean
+  onDeleteTask(id: string): void
 }
 
-export function Task(props: TaskProps) {
-  const [isChecked, setIsChecked] = useState(props.isCompleted)
+export function Task({ id, title, isCompleted, onDeleteTask }: TaskProps) {
+  const [isChecked, setIsChecked] = useState(isCompleted)
 
   function toggleCompletion() {
     setIsChecked(state => {
       return !state
     })
+  }
+
+  function handleDeleteTask() {
+    onDeleteTask(id)
   }
 
   return (
@@ -24,9 +30,9 @@ export function Task(props: TaskProps) {
             - Add check icon when task is checked
           */}
           <input type="checkbox" name="" id="" defaultChecked={isChecked} onClick={toggleCompletion} />
-          <p>{props.title}</p>
+          <p>{title}</p>
         </div>
-        <button>
+        <button onClick={handleDeleteTask}>
           <Trash size={20}/>
         </button>
     </div>
